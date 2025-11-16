@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calc-wrapper">
+        <div class="calc-container">
+            <h2>🧮 Calculator</h2>
+
+            <!-- Mode Toggle -->
+            <div class="mode-toggle">
+                <button class="mode-btn active" id="basicMode">Basic</button>
+                <button class="mode-btn" id="scientificMode">Scientific</button>
+                <button class="mode-btn" id="historyMode">History</button>
+            </div>
+
+            <!-- Display -->
+            <div class="display-label" id="displayLabel"></div>
+            <input type="text" id="display" value="0" readonly>
+
+            <!-- Basic Buttons -->
+            <div class="buttons" id="basicButtons">
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendOperator('/')">&div;</button>
+
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendOperator('*')">&times;</button>
+
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendOperator('-')">−</button>
+
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+                <button onclick="calculate()" style="grid-column: span 2;">=</button>
+
+                <button onclick="clearDisplay()">AC</button>
+                <button onclick="backspace()">⌫</button>
+                <button onclick="toggleSign()">+/−</button>
+                <button onclick="appendOperator('+')">+</button>
+
+                <button onclick="percentCalculate()">%</button>
+                <button onclick="calculateSquare()">x²</button>
+                <button onclick="calculateSquareRoot()">√</button>
+                <button onclick="calculateReciprocal()">1/x</button>
+            </div>
+
+            <!-- Scientific Buttons -->
+            <div class="scientific-buttons" id="scientificButtons">
+                <button onclick="calculateSine()">sin</button>
+                <button onclick="calculateCosine()">cos</button>
+                <button onclick="calculateTangent()">tan</button>
+                <button onclick="calculateLog()">log</button>
+
+                <button onclick="calculateLn()">ln</button>
+                <button onclick="calculateExp()">e^x</button>
+                <button onclick="appendPi()">π</button>
+                <button onclick="appendE()">e</button>
+
+                <button onclick="calculateFactorial()">n!</button>
+                <button onclick="calculateDegrees()">°</button>
+                <button onclick="calculateRadians()">rad</button>
+                <button onclick="toggleDegRad()">DEG/RAD</button>
+            </div>
+
+            <!-- History Panel -->
+            <div class="history-panel" id="historyPanel">
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
